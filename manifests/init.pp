@@ -299,6 +299,10 @@
 #  Specify a subcommand/flag for running docker as daemon
 #  Default is set on a per system basis in docker::params
 #
+# [*daemon_command*]
+#  Specify a command for running docker as daemon (docker 17.06 an ongoing have dockerd as daemon-command)
+#  Default is set on a per system basis in docker::params
+#
 # [*docker_users*]
 #   Specify an array of users to add to the docker group
 #   Default is empty
@@ -416,6 +420,7 @@ class docker(
   $service_name                      = $docker::params::service_name,
   $docker_command                    = $docker::params::docker_command,
   $daemon_subcommand                 = $docker::params::daemon_subcommand,
+  $daemon_command                    = $docker::params::daemon_command,
   $docker_users                      = [],
   $docker_group                      = $docker::params::docker_group,
   $daemon_environment_files          = [],
